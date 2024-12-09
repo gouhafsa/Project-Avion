@@ -1,0 +1,17 @@
+type Query {
+    getAllAvions: [AvionDTO]
+    getAvionByModel(model: String): [AvionDTO]
+    getAvionByModelAndPrice(model: String, price: Float): [AvionDTO]
+}
+
+type Mutation {
+    saveAvion(model: String, color: String, matricul: String, price: Float): AvionDTO
+    deleteAvion(matricul: String): Boolean
+}
+
+type AvionDTO {
+    model: String
+    color: String
+    matricul: String
+    price: Float
+}
